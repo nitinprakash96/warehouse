@@ -823,13 +823,13 @@ def file_upload(request):
         if not any(email.verified for email in request.user.emails):
             raise _exc_with_message(
                 HTTPBadRequest,
-                ("User {name!r} has no verified email addresses, please verify "
-                 "at least one address before registering a new project on "
-                 "PyPI. See {projecthelp} "
+                ("User {name!r} has no verified email addresses, "
+                 "please verify at least one address before registering "
+                 "a new project on PyPI. See {projecthelp} "
                  "for more information.").format(
-                    name=form.name.data,
-                    projecthelp=request.route_url(
-                    'help', _anchor='verified-email')),
+                     name=form.name.data,
+                     projecthelp=request.route_url(
+                         'help', _anchor='verified-email')),
             ) from None
 
         # Before we create the project, we're going to check our blacklist to

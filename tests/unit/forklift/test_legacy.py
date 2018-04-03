@@ -2754,7 +2754,7 @@ class TestFileUpload:
 
             resp = excinfo.value
 
-            assert db_request.route_url.calls = [
+            assert db_request.route_url.calls == [
                 pretend.call('help', _anchor='verified-email')
             ]
             assert resp.status_code == 400
