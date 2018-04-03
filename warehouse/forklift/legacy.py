@@ -828,7 +828,7 @@ def file_upload(request):
                  "PyPI. See {projecthelp} "
                  "for more information.").format(
                     name=form.name.data,
-                    projecthe=request.route_url(
+                    projecthelp=request.route_url(
                     'help', _anchor='verified-email')),
             ) from None
 
